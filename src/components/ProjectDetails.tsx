@@ -337,7 +337,7 @@ export function Developer() {
 type SocialName = keyof typeof project.socials
 const socials: { key: SocialName; title: string; label: string }[] = [
   { key: 'facebook', title: 'Facebook', label: 'Official project page' },
-  { key: 'instagram', title: 'Instagram', label: 'A look behind the scenes' },
+  { key: 'instagram', title: 'Instagram', label: 'Official project profile' },
   { key: 'tiktok', title: 'TikTok', label: 'Ideas in motion' },
 ]
 

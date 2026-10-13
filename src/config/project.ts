@@ -33,8 +33,7 @@ export const project = {
   ] satisfies readonly TeamMember[],
   socials: {
     facebook: 'https://www.facebook.com/share/19rtHdkiub/',
-    instagram:
-      'https://www.instagram.com/reel/Dea0p0uRyBl/?cplk=MXdxdDR2bzljaXlqbw==',
+    instagram: 'https://www.instagram.com/sign.language.recognition/',
     tiktok: 'https://vt.tiktok.com/ZSbEdh5Hc/',
   },
 } as const
