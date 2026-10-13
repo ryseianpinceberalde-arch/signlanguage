@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import {
   ArrowRight,
   ArrowUpRight,
@@ -16,6 +16,7 @@ import {
   ScanEye,
   Sparkles,
   Users,
+  X,
 } from 'lucide-react'
 import {
   contactHref,
@@ -199,6 +200,8 @@ export function Benefits() {
 
 function TeamMemberCard({ member }: { member: TeamMember }) {
   const [photoFailed, setPhotoFailed] = useState(false)
+  const [photoOpen, setPhotoOpen] = useState(false)
+  const photoDialog = useRef<HTMLDialogElement>(null)
   const photoUrl = member.photoUrl ?? ''
   const photo = /^\/images\/[\w.-]+$/.test(photoUrl)
     ? photoUrl
@@ -210,6 +213,14 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
   const nameParts = member.name.trim().split(/\s+/)
   const initials = `${nameParts[0][0]}${nameParts.length > 1 ? nameParts[nameParts.length - 1][0] : ''}`
 
+  useEffect(() => {
+    const dialog = photoDialog.current
+    if (photoOpen && dialog && !dialog.open) dialog.showModal()
+    return () => {
+      if (dialog?.open) dialog.close()
+    }
+  }, [photoOpen])
+
   return (
     <article
       className="details-developer-card"
@@ -217,12 +228,19 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
     >
       <div className="details-developer-avatar">
         {photo && !photoFailed ? (
-          <img
-            src={photo}
-            alt={member.name}
-            loading="lazy"
-            onError={() => setPhotoFailed(true)}
-          />
+          <button
+            className="details-developer-photo-button"
+            type="button"
+            aria-label={`View ${member.name}'s photo`}
+            onClick={() => setPhotoOpen(true)}
+          >
+            <img
+              src={photo}
+              alt={member.name}
+              loading="lazy"
+              onError={() => setPhotoFailed(true)}
+            />
+          </button>
         ) : (
           <>
             <span aria-hidden="true">
@@ -256,6 +274,28 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
           </div>
         )}
       </div>
+      {photo && !photoFailed && (
+        <dialog
+          ref={photoDialog}
+          className="details-photo-dialog"
+          aria-label={`${member.name}'s photo`}
+          onClose={() => setPhotoOpen(false)}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setPhotoOpen(false)
+          }}
+        >
+          <button
+            className="details-photo-dialog-close"
+            type="button"
+            aria-label="Close photo"
+            onClick={() => setPhotoOpen(false)}
+          >
+            <X size={20} aria-hidden="true" />
+          </button>
+          <img src={photo} alt={member.name} />
+          <p>{member.name}</p>
+        </dialog>
+      )}
     </article>
   )
 }

@@ -280,6 +280,62 @@
   height: 100%;
   object-fit: cover;
 }
+.details-developer-photo-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.details-developer-photo-button:focus-visible,
+.details-photo-dialog-close:focus-visible {
+  outline: 2px solid #58edd0;
+  outline-offset: -3px;
+}
+.details-photo-dialog {
+  position: fixed;
+  max-width: min(92vw, 900px);
+  max-height: 92vh;
+  padding: 18px;
+  overflow: auto;
+  border: 1px solid #58edd044;
+  border-radius: 18px;
+  background: #0b1119;
+  color: #e9f0f5;
+}
+.details-photo-dialog::backdrop {
+  background: #03070bd9;
+  backdrop-filter: blur(5px);
+}
+.details-photo-dialog > img {
+  display: block;
+  max-width: min(84vw, 820px);
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.details-photo-dialog > p {
+  margin: 12px 42px 0 0;
+  color: #dce7ee;
+  font-size: 14px;
+}
+.details-photo-dialog-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid #ffffff25;
+  border-radius: 50%;
+  background: #0b1119dd;
+  color: #e9f0f5;
+  cursor: pointer;
+}
 .details-developer-copy {
   min-width: 0;
   flex: 1;
