@@ -296,6 +296,8 @@
 }
 .details-photo-dialog {
   position: fixed;
+  inset: 0;
+  margin: auto;
   max-width: min(92vw, 900px);
   max-height: 92vh;
   padding: 18px;
@@ -304,6 +306,7 @@
   border-radius: 18px;
   background: #0b1119;
   color: #e9f0f5;
+  text-align: center;
 }
 .details-photo-dialog::backdrop {
   background: #03070bd9;
@@ -311,6 +314,7 @@
 }
 .details-photo-dialog > img {
   display: block;
+  margin-inline: auto;
   max-width: min(84vw, 820px);
   max-height: 80vh;
   object-fit: contain;
