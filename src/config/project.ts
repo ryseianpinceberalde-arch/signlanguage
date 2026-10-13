@@ -23,7 +23,11 @@ export const project = {
     linkedinUrl: '',
   },
   team: [
-    { name: 'Geralden Batoon', role: 'Project Manager', photoUrl: '' },
+    {
+      name: 'Geralden Batoon',
+      role: 'Project Manager',
+      photoUrl: '/images/geralden-batoon.jpg',
+    },
     { name: 'Jakielou Madar', role: 'Database Designer', photoUrl: '' },
     {
       name: 'Johanah Mae Obar',
