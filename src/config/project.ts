@@ -34,7 +34,7 @@ export const project = {
   socials: {
     facebook: 'https://www.facebook.com/share/19rtHdkiub/',
     instagram: 'https://www.instagram.com/sign.language.recognition/',
-    tiktok: 'https://vt.tiktok.com/ZSbEdh5Hc/',
+    tiktok: 'https://www.tiktok.com/@signlanguagerecognition',
   },
 } as const
 
