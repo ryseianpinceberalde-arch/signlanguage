@@ -28,7 +28,11 @@ export const project = {
       role: 'Project Manager',
       photoUrl: '/images/geralden-batoon.jpg',
     },
-    { name: 'Jakielou Madar', role: 'Database Designer', photoUrl: '' },
+    {
+      name: 'Jakielou Madar',
+      role: 'Database Designer',
+      photoUrl: '/images/jakielou-madar.jpg',
+    },
     {
       name: 'Johanah Mae Obar',
       role: 'UI Designer',
