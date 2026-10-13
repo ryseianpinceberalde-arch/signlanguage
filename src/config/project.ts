@@ -25,7 +25,11 @@ export const project = {
   team: [
     { name: 'Geralden Batoon', role: 'Project Manager', photoUrl: '' },
     { name: 'Jakielou Madar', role: 'Database Designer', photoUrl: '' },
-    { name: 'Johanah Mae Obar', role: 'UI Designer', photoUrl: '' },
+    {
+      name: 'Johanah Mae Obar',
+      role: 'UI Designer',
+      photoUrl: '/images/johanah-mae-obar.jpg',
+    },
   ] satisfies readonly TeamMember[],
   socials: {
     facebook: 'https://www.facebook.com/share/19rtHdkiub/',
