@@ -17,7 +17,7 @@ export const project = {
   logo: 'images/project-logo.jpg',
   developer: {
     name: 'Ryse Ian Prince Beralde',
-    role: 'System Developer',
+    role: 'Full Stack Developer',
     photoUrl: '/images/ryse-ian-prince-beralde.jpg',
     portfolioUrl: '',
     linkedinUrl: '',
