@@ -199,7 +199,10 @@ export function Benefits() {
 
 function TeamMemberCard({ member }: { member: TeamMember }) {
   const [photoFailed, setPhotoFailed] = useState(false)
-  const photo = externalUrl(member.photoUrl ?? '')
+  const photoUrl = member.photoUrl ?? ''
+  const photo = /^\/images\/[\w.-]+$/.test(photoUrl)
+    ? photoUrl
+    : externalUrl(photoUrl)
   const links = [
     { name: 'Portfolio', url: externalUrl(member.portfolioUrl ?? '') },
     { name: 'LinkedIn', url: externalUrl(member.linkedinUrl ?? '') },

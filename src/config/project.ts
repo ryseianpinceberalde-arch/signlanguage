@@ -18,7 +18,7 @@ export const project = {
   developer: {
     name: 'Ryse Ian Prince Beralde',
     role: 'System Developer',
-    photoUrl: '',
+    photoUrl: '/images/ryse-ian-prince-beralde.jpg',
     portfolioUrl: '',
     linkedinUrl: '',
   },
